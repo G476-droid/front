@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Viaje del Candidato - Prototipo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🧭</div>
+        <div>
+          <h1>El Viaje del Candidato</h1>
+          <p class="subtitle">Encuentra trabajo cerca con una experiencia visual y rápida.</p>
+        </div>
+      </div>
+      <button id="notifyBtn" class="ghost">🔔 Simular notificación</button>
+    </header>
+
+    <main class="layout">
+      <aside class="panel filters">
+        <h2>🎯 Filtros Inteligentes</h2>
+        <label>Área
+          <select id="areaFilter"><option value="all">Todas</option><option value="sistemas">Sistemas</option><option value="oftalmologia">Oftalmología Veterinaria</option></select>
+        </label>
+        <label>Modalidad
+          <select id="modeFilter"><option value="all">Todas</option><option value="presencial">Presencial</option><option value="remoto">Remoto</option></select>
+        </label>
+        <label><input type="checkbox" id="partTimeFilter" /> ⏰ Medio Tiempo</label>
+        <label><input type="checkbox" id="firstJobFilter" /> 🌱 Primer Empleo / Sin experiencia</label>
+        <label>Radio (km)
+          <input type="range" id="radiusFilter" min="1" max="15" value="5" />
+          <span id="radiusValue">5 km</span>
+        </label>
+      </aside>
+
+      <section class="panel map-panel">
+        <div class="map-toolbar"><strong>🗺️ Mapa interactivo de vacantes</strong><span id="resultsCount"></span></div>
+        <div class="map" id="map"></div>
+      </section>
+
+      <aside class="panel details" id="details">
+        <h2>👋 Selecciona una vacante</h2>
+        <p>Haz clic en un pin para ver empresa, fotos, video y aplicar.</p>
+      </aside>
+    </main>
+
+    <dialog id="applyDialog">
+      <form method="dialog" id="applyForm">
+        <h3>⚡ Aplicación Express</h3>
+        <p>¿Quieres aplicar con tu perfil actual?</p>
+        <label>Nombre completo<input id="fullName" required minlength="4" placeholder="Ej: Ana Pérez" /></label>
+        <label>Teléfono<input id="phone" required pattern="^[0-9+\-\s]{7,15}$" placeholder="0991234567" /></label>
+        <menu><button value="cancel">Cancelar</button><button id="confirmApply" value="default">Confirmar</button></menu>
+      </form>
+    </dialog>
+
+    <dialog id="testDialog">
+      <h3>🧠 Reto de Talento</h3>
+      <p>Resultado: <strong>Arquitecto de Soluciones</strong> • Compatibilidad <strong>85%</strong></p>
+      <p>Para llegar al 100%, toma este micro-curso:</p>
+      <button id="courseBtn">📘 Control de Versiones (10 min, gratis)</button>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
