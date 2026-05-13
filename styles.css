@@ -1,0 +1,19 @@
+:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--accent:#22c55e;--warn:#facc15;--muted:#94a3b8}
+*{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{margin:0;background:linear-gradient(140deg,#020617,#0f172a);color:var(--text)}
+.topbar{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;border-bottom:1px solid #1f2937;position:sticky;top:0;background:#020617d9;backdrop-filter:blur(6px)}
+.layout{display:grid;grid-template-columns:280px 1fr 340px;gap:1rem;padding:1rem;min-height:calc(100vh - 88px)}
+.panel{background:var(--card);border:1px solid #1f2937;border-radius:14px;padding:1rem}
+.filters label{display:block;margin:.75rem 0;color:var(--muted)}
+select,input[type="range"],input{width:100%;margin-top:.35rem;padding:.5rem;border-radius:8px;border:1px solid #334155;background:#0b1220;color:var(--text)}
+.map{height:100%;min-height:520px;border-radius:10px;background:#0b1220;position:relative;overflow:hidden}
+.map::before{content:"Quito - mapa simulado";position:absolute;top:12px;left:12px;color:#9ca3af;font-size:.85rem}
+.pin{position:absolute;width:18px;height:18px;border-radius:50%;background:#38bdf8;border:2px solid #fff;cursor:pointer;transform:translate(-50%,-50%)}
+.pin.review{background:var(--warn)}
+.pin.hired{background:#16a34a;opacity:.45;pointer-events:none}
+.bubble{position:absolute;background:#111827;padding:.2rem .5rem;border:1px solid #374151;border-radius:999px;font-size:.75rem;white-space:nowrap;transform:translate(-50%,-180%)}
+.salary{display:inline-block;background:#22c55e;color:#02140a;padding:.6rem 1rem;border-radius:10px;font-size:1.3rem;font-weight:800;text-decoration:none}
+.ghost{background:transparent;color:var(--text);border:1px solid #374151;padding:.5rem .8rem;border-radius:10px}
+dialog{border:1px solid #334155;background:#0b1220;color:var(--text);border-radius:12px;max-width:440px;width:90%}
+menu{display:flex;justify-content:flex-end;gap:.5rem;padding:0}
+@media (max-width:1024px){.layout{grid-template-columns:1fr}.map{min-height:420px}}
